@@ -1,5 +1,3 @@
-import re
-
 from Parsers.AbstractParserModel import AbstractParserInterface
 
 class FindServicesParser(AbstractParserInterface):
@@ -20,6 +18,7 @@ class FindServicesParser(AbstractParserInterface):
                     for port in portsDict:
                         portInfo = {
                             "port" : port,
+                            "extra" : portsDict[port]["extrainfo"],
                             "name" : portsDict[port]["name"],
                             "product" : portsDict[port]["product"], 
                             "version" : portsDict[port]["version"]
